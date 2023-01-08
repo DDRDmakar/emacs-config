@@ -1,0 +1,481 @@
+
+* Doom themes list
+doom-1337 	link 	ported from VSCode's 1337 theme (ported by @ccmywish)
+doom-acario-dark 	original 	an original dark theme (ported by @gagbo)
+doom-acario-light 	original 	an original light theme (ported by @gagbo)
+doom-ayu-dark 	link 	inspired by Ayu Dark (ported by @ashton)
+doom-ayu-light 	link 	inspirted by Ayu Light (ported by @LoveSponge)
+doom-ayu-mirage 	link 	inspired by Ayu Mirage (ported by @LoveSponge)
+doom-badger 	link 	inspired by cann's Badger colorscheme (ported by @jsoa)
+doom-challenger-deep 	link 	inspired by Vim's Challenger Deep theme (ported by @fuxialexander)
+doom-city-lights 	link 	inspired by Atom's City Lights theme (ported by @fuxialexander)
+doom-dark+ 	n/a 	ported from equinusocio's VSCode Theme, dark+ (ported by @ema2159)
+doom-dracula 	link 	inspired by the popular Dracula theme (ported by @fuxialexander)
+doom-earl-grey 	original 	a gentle color scheme, for code (ported by @JuneKelly)
+doom-ephemeral 	link 	inspired by the Ephemeral Theme from elenapan's dotfiles (ported by @karetsu)
+doom-fairy-floss 	link 	a candy colored theme by sailorhg (ported by @ema2159)
+doom-flatwhite 	link 	inspired by Atom's Flatwhite Syntax theme (ported by @JuneKelly)
+doom-gruvbox 	link 	inspired by morhetz's Gruvbox (ported by @JongW)
+doom-gruvbox-light 	link 	inspired by morhetz's Gruvbox (light) (ported by @jsoa)
+doom-henna 	link 	based on VSCode's Henna theme (ported by @jsoa)
+doom-homage-black 	original 	a minimalistic, colorless theme inspired by eziam, tao, and jbeans (ported by @mskorzhinskiy)
+doom-homage-white 	original 	minimal white theme inspired by editors from 2000s (ported by @mskorzhinskiy)
+doom-horizon 	link 	ported from VSCode Horizon (ported by @karetsu)
+doom-Iosvkem 	link 	ported from the default dark theme for Adobe Brackets (ported by @neutaaaaan)
+doom-ir-black 	link 	ported from Vim's ir_black colorscheme (ported by @legendre6891)
+doom-lantern 	link 	based on Gitleptune's Lantern theme (ported by @paladhammika)
+doom-laserwave 	link 	a clean synthwave/outrun theme inspired by VSCode's Laserwave (ported by @hyakt)
+doom-manegarm 	original 	an original autumn-inspired dark theme (ported by @kenranunderscore)
+doom-material 	link 	adapted from equinusocio's Material themes (ported by @tam5)
+doom-material-dark 	link 	inspired by Material Theme by xrei (ported by @trev-dev)
+doom-meltbus 	link 	a dark (mostly) monochromatic theme (ported by @spacefrogg)
+doom-miramare 	link 	a port of Franbach's Miramare theme; a variant of Grubox (ported by @sagittaros)
+doom-molokai 	link 	inspired by Tomas Restrepo's Molokai (ported by @hlissner)
+doom-monokai-classic 	link 	port of Monokai Classic (ported by @ema2159)
+doom-monokai-machine 	link 	port of Monokai Classic (ported by @minikN)
+doom-monokai-octagon 	link 	port of Monokai Octagon (ported by @minikN)
+doom-monokai-pro 	link 	Port of Monokai Pro (ported by @minikN)
+doom-monokai-ristretto 	link 	Port of Monokai Ristretto (ported by @minikN)
+doom-monokai-spectrum 	link 	port of Monokai Spectrum (ported by @minikN)
+doom-moonlight 	link 	inspired by VS code's Moonlight (ported by @Brettm12345)
+doom-nord 	link 	dark variant of Nord (ported by @fuxialexander)
+doom-nord-aurora 	link 	a light variant of Nord (ported by @MoskitoHero)
+doom-nord-light 	link 	light variant of Nord (ported by @fuxialexander)
+doom-nova 	link 	inspired by Trevord Miller's Nova (ported by @bigardone)
+doom-oceanic-next 	link 	inspired by Oceanic Next (ported by @juanwolf)
+doom-old-hope 	link 	inspired by An Old Hope, in a galaxy far far away (ported by @teesloane)
+doom-one 	link 	inspired by Atom One Dark (ported by @hlissner)
+doom-one-light 	link 	inspired by Atom One Light (ported by @ztlevi)
+doom-opera 	original 	an original light theme (ported by @jwintz)
+doom-opera-light 	original 	an original light theme (ported by @jwintz)
+doom-outrun-electric 	link 	a high contrast, neon theme inspired by Outrun Electric on VSCode (ported by @ema2159)
+doom-palenight 	link 	adapted from equinusocio's Material themes (ported by @Brettm12345)
+doom-peacock 	link 	inspired by daylerees' Peacock (ported by @teesloane)
+doom-plain 	link 	inspired by gko's plain theme for VSCode (ported by @das-s)
+doom-plain-dark 	link 	inspired by gko's plain theme for VSCode (ported by @das-s)
+doom-rouge 	link 	ported from VSCode's Rouge Theme (ported by @das-s)
+doom-shades-of-purple 	link 	a port of VSCode's Shades of Purple (ported by @jwbaldwin)
+doom-snazzy 	link 	inspired by Hyper Snazzy (ported by @ar1a)
+doom-solarized-dark 	link 	a dark variant of Solarized (ported by @ema2159)
+doom-solarized-dark-high-contrast 	link 	a high-contrast variant of Solarized Dark (ported by @jmorag)
+doom-solarized-light 	link 	a light variant of Solarized (ported by @fuxialexander)
+doom-sourcerer 	link 	a port of xero's Sourcerer (ported by @fm0xb)
+doom-spacegrey 	link 	I'm sure you've heard of it (ported by @teesloane)
+doom-tokyo-night 	link 	inspired by VSCode's Tokyo Night theme (ported by @FosterHangdaan)
+doom-tomorrow-day 	link 	a light variant of Tomorrow (ported by @emacswatcher)
+doom-tomorrow-night 	link 	One of the dark variants of Tomorrow (ported by @hlissner)
+doom-vibrant 	doom-one 	a more vibrant variant of doom-one (ported by @hlissner)
+doom-wilmersdorf 	link 	port of Ian Pan's Wilmersdorf (ported by @ema2159)
+doom-xcode 	Xcode.app 	based off of Apple's Xcode Dark Theme (ported by @kadenbarlow)
+doom-zenburn 	link 	port of the popular Zenburn theme (ported by @jsoa)
+
+
+* Verilog mode custom vars
+#+BEGIN_SRC emacs-lisp
+(defcustom verilog-warn-fatal nil
+  "Non-nil means `verilog-warn-error' warnings are fatal `error's."
+  :group 'verilog-mode-auto
+  :type 'boolean)
+(put 'verilog-warn-fatal 'safe-local-variable #'verilog-booleanp)
+
+;; Internal use similar to `verilog-warn-fatal'
+(defvar verilog-warn-fatal-internal t)
+
+(defcustom verilog-linter
+  "echo 'No verilog-linter set, see \"M-x describe-variable verilog-linter\"'"
+  "Unix program and arguments to call to run a lint checker on Verilog source.
+Depending on the `verilog-set-compile-command', this may be invoked when
+you type \\[compile].  When the compile completes, \\[next-error] will take
+you to the next lint error."
+  :type 'string
+  :group 'verilog-mode-actions)
+;; We don't mark it safe, as it's used as a shell command
+
+(defcustom verilog-coverage
+  "echo 'No verilog-coverage set, see \"M-x describe-variable verilog-coverage\"'"
+  "Program and arguments to use to annotate for coverage Verilog source.
+Depending on the `verilog-set-compile-command', this may be invoked when
+you type \\[compile].  When the compile completes, \\[next-error] will take
+you to the next lint error."
+  :type 'string
+  :group 'verilog-mode-actions)
+;; We don't mark it safe, as it's used as a shell command
+
+(defcustom verilog-simulator
+  "echo 'No verilog-simulator set, see \"M-x describe-variable verilog-simulator\"'"
+  "Program and arguments to use to interpret Verilog source.
+Depending on the `verilog-set-compile-command', this may be invoked when
+you type \\[compile].  When the compile completes, \\[next-error] will take
+you to the next lint error."
+  :type 'string
+  :group 'verilog-mode-actions)
+;; We don't mark it safe, as it's used as a shell command
+
+(defcustom verilog-compiler
+  "echo 'No verilog-compiler set, see \"M-x describe-variable verilog-compiler\"'"
+  "Program and arguments to use to compile Verilog source.
+Depending on the `verilog-set-compile-command', this may be invoked when
+you type \\[compile].  When the compile completes, \\[next-error] will take
+you to the next lint error."
+  :type 'string
+  :group 'verilog-mode-actions)
+;; We don't mark it safe, as it's used as a shell command
+
+(defcustom verilog-preprocessor
+  "verilator -E __FLAGS__ __FILE__"
+  "Program and arguments to use to preprocess Verilog source.
+This is invoked with `verilog-preprocess', and depending on the
+`verilog-set-compile-command', may also be invoked when you type
+\\[compile].  When the compile completes, \\[next-error] will
+take you to the next lint error."
+  :type 'string
+  :group 'verilog-mode-actions)
+;; We don't mark it safe, as it's used as a shell command
+
+(defvar verilog-preprocess-history nil
+  "History for `verilog-preprocess'.")
+
+(defvar verilog-tool 'verilog-linter
+  "Which tool to use for building compiler-command.
+Either nil, `verilog-linter', `verilog-compiler',
+`verilog-coverage', `verilog-preprocessor', or `verilog-simulator'.
+Alternatively use the \"Choose Compilation Action\" menu.  See
+`verilog-set-compile-command' for more information.")
+
+(defcustom verilog-highlight-translate-off nil
+  "Non-nil means background-highlight code excluded from translation.
+That is, all code between \"// synopsys translate_off\" and
+\"// synopsys translate_on\" is highlighted using a different background color
+\(face `verilog-font-lock-translate-off-face').
+Note: This will slow down on-the-fly fontification (and thus editing).
+Note: Activate the new setting in a Verilog buffer by re-fontifying it (menu
+entry \"Fontify Buffer\").  XEmacs: turn off and on font locking."
+  :type 'boolean
+  :group 'verilog-mode-indent)
+;; Note we don't use :safe, as that would break on Emacsen before 22.0.
+(put 'verilog-highlight-translate-off 'safe-local-variable #'verilog-booleanp)
+
+(defcustom verilog-auto-lineup 'declarations
+  "Type of statements to lineup across multiple lines.
+If `all' is selected, then all line ups described below are done.
+If `declarations', then just declarations are lined up with any
+preceding declarations, taking into account widths and the like,
+so or example the code:
+        reg [31:0] a;
+        reg b;
+would become
+        reg [31:0] a;
+        reg        b;
+If `assignment', then assignments are lined up with any preceding
+assignments, so for example the code
+        a_long_variable <= b + c;
+        d = e + f;
+would become
+        a_long_variable <= b + c;
+        d                = e + f;
+In order to speed up editing, large blocks of statements are lined up
+only when a \\[verilog-pretty-expr] is typed; and large blocks of declarations
+are lineup only when \\[verilog-pretty-declarations] is typed."
+
+  :type '(radio (const :tag "Line up Assignments and Declarations" all)
+		(const :tag "Line up Assignment statements" assignments )
+		(const :tag "Line up Declarations" declarations)
+		(function :tag "Other"))
+  :group 'verilog-mode-indent )
+(put 'verilog-auto-lineup 'safe-local-variable
+     (lambda (x) (memq x '(nil all assignments declarations))))
+
+(defcustom verilog-indent-level 3
+  "Indentation of Verilog statements with respect to containing block."
+  :group 'verilog-mode-indent
+  :type 'integer)
+(put 'verilog-indent-level 'safe-local-variable #'integerp)
+
+(defcustom verilog-indent-level-module 3
+  "Indentation of Module level Verilog statements (eg always, initial).
+Set to 0 to get initial and always statements lined up on the left side of
+your screen."
+  :group 'verilog-mode-indent
+  :type 'integer)
+(put 'verilog-indent-level-module 'safe-local-variable #'integerp)
+
+(defcustom verilog-indent-level-declaration 3
+  "Indentation of declarations with respect to containing block.
+Set to 0 to get them list right under containing block."
+  :group 'verilog-mode-indent
+  :type 'integer)
+(put 'verilog-indent-level-declaration 'safe-local-variable #'integerp)
+
+(defcustom verilog-indent-declaration-macros nil
+  "How to treat macro expansions in a declaration.
+If nil, indent as:
+        input [31:0] a;
+        input        \\=`CP;
+        output       c;
+If non-nil, treat as:
+        input [31:0] a;
+        input \\=`CP    ;
+        output       c;"
+  :group 'verilog-mode-indent
+  :type 'boolean)
+(put 'verilog-indent-declaration-macros 'safe-local-variable #'verilog-booleanp)
+
+(defcustom verilog-indent-lists t
+  "How to treat indenting items in a list.
+If t (the default), indent as:
+        always @( posedge a or
+                  reset ) begin
+If nil, treat as:
+        always @( posedge a or
+           reset ) begin"
+  :group 'verilog-mode-indent
+  :type 'boolean)
+(put 'verilog-indent-lists 'safe-local-variable #'verilog-booleanp)
+
+(defcustom verilog-indent-level-behavioral 3
+  "Absolute indentation of first begin in a task or function block.
+Set to 0 to get such code to start at the left side of the screen."
+  :group 'verilog-mode-indent
+  :type 'integer)
+(put 'verilog-indent-level-behavioral 'safe-local-variable #'integerp)
+
+(defcustom verilog-indent-level-directive 1
+  "Indentation to add to each level of \\=`ifdef declarations.
+Set to 0 to have all directives start at the left side of the screen."
+  :group 'verilog-mode-indent
+  :type 'integer)
+(put 'verilog-indent-level-directive 'safe-local-variable #'integerp)
+
+(defcustom verilog-indent-ignore-multiline-defines t
+  "Non-nil means ignore indentation on lines that are part of a multiline define."
+  :group 'verilog-mode-indent
+  :type 'boolean)
+(put 'verilog-indent-ignore-multiline-defines 'safe-local-variable #'verilog-booleanp)
+
+(defcustom verilog-indent-ignore-regexp nil
+  "Regexp that matches lines that should be ignored for indentation."
+  :group 'verilog-mode-indent
+  :type 'boolean)
+(put 'verilog-indent-ignore-regexp 'safe-local-variable #'stringp)
+
+(defcustom verilog-cexp-indent 2
+  "Indentation of Verilog statements split across lines."
+  :group 'verilog-mode-indent
+  :type 'integer)
+(put 'verilog-cexp-indent 'safe-local-variable #'integerp)
+
+(defcustom verilog-case-indent 2
+  "Indentation for case statements."
+  :group 'verilog-mode-indent
+  :type 'integer)
+(put 'verilog-case-indent 'safe-local-variable #'integerp)
+
+(defcustom verilog-auto-newline t
+  "Non-nil means automatically newline after semicolons."
+  :group 'verilog-mode-indent
+  :type 'boolean)
+(put 'verilog-auto-newline 'safe-local-variable #'verilog-booleanp)
+
+(defcustom verilog-auto-indent-on-newline t
+  "Non-nil means automatically indent line after newline."
+  :group 'verilog-mode-indent
+  :type 'boolean)
+(put 'verilog-auto-indent-on-newline 'safe-local-variable #'verilog-booleanp)
+
+(defcustom verilog-tab-always-indent t
+  "Non-nil means TAB should always re-indent the current line.
+A nil value means TAB will only reindent when at the beginning of the line."
+  :group 'verilog-mode-indent
+  :type 'boolean)
+(put 'verilog-tab-always-indent 'safe-local-variable #'verilog-booleanp)
+
+(defcustom verilog-tab-to-comment nil
+  "Non-nil means TAB moves to the right hand column in preparation for a comment."
+  :group 'verilog-mode-actions
+  :type 'boolean)
+(put 'verilog-tab-to-comment 'safe-local-variable #'verilog-booleanp)
+
+(defcustom verilog-indent-begin-after-if t
+  "Non-nil means indent begin statements following if, else, while, etc.
+Otherwise, line them up."
+  :group 'verilog-mode-indent
+  :type 'boolean)
+(put 'verilog-indent-begin-after-if 'safe-local-variable #'verilog-booleanp)
+
+(defcustom verilog-indent-class-inside-pkg t
+  "Non-nil means indent classes inside packages.
+Otherwise, classes have zero indentation."
+  :group 'verilog-mode-indent
+  :type 'boolean)
+(put 'verilog-indent-class-inside-pkg 'safe-local-variable #'verilog-booleanp)
+
+(defcustom verilog-align-ifelse nil
+  "Non-nil means align `else' under matching `if'.
+Otherwise else is lined up with first character on line holding matching if."
+  :group 'verilog-mode-indent
+  :type 'boolean)
+(put 'verilog-align-ifelse 'safe-local-variable #'verilog-booleanp)
+
+(defcustom verilog-align-decl-expr-comments t
+  "Non-nil means align declaration and expressions comments."
+  :group 'verilog-mode-indent
+  :type 'boolean)
+(put 'verilog-align-decl-expr-comments 'safe-local-variable #'verilog-booleanp)
+
+(defcustom verilog-align-comment-distance 1
+  "Distance (in spaces) between longest declaration/expression and comments.
+Only works if `verilog-align-decl-expr-comments' is non-nil."
+  :group 'verilog-mode-indent
+  :type 'integer)
+(put 'verilog-align-comment-distance 'safe-local-variable #'integerp)
+
+(defcustom verilog-align-assign-expr nil
+  "Non-nil means align expressions of continuous assignments."
+  :group 'verilog-mode-indent
+  :type 'boolean)
+(put 'verilog-align-assign-expr 'safe-local-variable #'verilog-booleanp)
+
+(defcustom verilog-minimum-comment-distance 10
+  "Minimum distance (in lines) between begin and end required before a comment.
+Setting this variable to zero results in every end acquiring a comment; the
+default avoids too many redundant comments in tight quarters."
+  :group 'verilog-mode-indent
+  :type 'integer)
+(put 'verilog-minimum-comment-distance 'safe-local-variable #'integerp)
+
+(defcustom verilog-highlight-p1800-keywords nil
+  "Obsolete.
+Was non-nil means highlight SystemVerilog IEEE-1800 differently.
+All code is now highlighted as if SystemVerilog IEEE-1800."
+  :group 'verilog-mode-indent
+  :type 'boolean)
+(put 'verilog-highlight-p1800-keywords 'safe-local-variable #'verilog-booleanp)
+(make-obsolete-variable 'verilog-highlight-p1800-keywords nil "27.1")
+
+(defcustom verilog-highlight-grouping-keywords nil
+  "Non-nil means highlight grouping keywords more dramatically.
+If false, these words are in the `font-lock-type-face'; if True
+then they are in `verilog-font-lock-grouping-keywords-face'.
+Some find that special highlighting on these grouping constructs
+allow the structure of the code to be understood at a glance."
+  :group 'verilog-mode-indent
+  :type 'boolean)
+(put 'verilog-highlight-grouping-keywords 'safe-local-variable #'verilog-booleanp)
+
+(defcustom verilog-highlight-modules nil
+  "Non-nil means highlight module statements for `verilog-load-file-at-point'.
+When true, mousing over module names will allow jumping to the
+module definition.  If false, this is not supported.  Setting
+this is experimental, and may lead to bad performance."
+  :group 'verilog-mode-indent
+  :type 'boolean)
+(put 'verilog-highlight-modules 'safe-local-variable #'verilog-booleanp)
+
+(defcustom verilog-highlight-includes t
+  "Non-nil means highlight module statements for `verilog-load-file-at-point'.
+When true, mousing over include file names will allow jumping to the
+file referenced.  If false, this is not supported."
+  :group 'verilog-mode-indent
+  :type 'boolean)
+(put 'verilog-highlight-includes 'safe-local-variable #'verilog-booleanp)
+
+(defcustom verilog-highlight-max-lookahead 10000
+  "Maximum size of declaration statement that undergoes highlighting.
+Highlighting is performed only on the first `verilog-highlight-max-lookahead'
+characters in a declaration statement.
+Setting this variable to zero would remove this limit.  Note that removing
+the limit can greatly slow down highlighting for very large files."
+  :group 'verilog-mode-indent
+  :type 'integer)
+(put 'verilog-highlight-max-lookahead 'safe-local-variable #'integerp)
+
+(defcustom verilog-auto-declare-nettype nil
+  "Non-nil specifies the data type to use with `verilog-auto-input' etc.
+Set this to \"wire\" if the Verilog code uses \"\\=`default_nettype
+none\".  Note using \\=`default_nettype none isn't recommended practice; this
+mode is experimental."
+  :version "24.1"  ; rev670
+  :group 'verilog-mode-actions
+  :type 'boolean)
+(put 'verilog-auto-declare-nettype 'safe-local-variable #'stringp)
+
+(defcustom verilog-auto-wire-comment t
+  "Non-nil indicates to insert to/from comments with `verilog-auto-wire' etc."
+  :version "25.1"
+  :group 'verilog-mode-actions
+  :type 'boolean)
+(put 'verilog-auto-wire-comment 'safe-local-variable #'verilog-booleanp)
+
+(defcustom verilog-auto-wire-type nil
+  "Non-nil specifies the data type to use with `verilog-auto-wire' etc.
+Set this to \"logic\" for SystemVerilog code, or use `verilog-auto-logic'.
+Set this to \"wire\" to force use of wire when logic is otherwise appropriate;
+this is generally only appropriate when making a non-SystemVerilog wrapper
+containing SystemVerilog cells."
+  :version "24.1"  ; rev673
+  :group 'verilog-mode-actions
+  :type '(choice (const nil) string))
+(put 'verilog-auto-wire-type 'safe-local-variable #'stringp)
+
+(defcustom verilog-auto-endcomments t
+  "Non-nil means insert a comment /* ... */ after `end's.
+The name of the function or case will be set between the braces."
+  :group 'verilog-mode-actions
+  :type 'boolean)
+(put 'verilog-auto-endcomments 'safe-local-variable #'verilog-booleanp)
+
+(defcustom verilog-auto-delete-trailing-whitespace nil
+  "Non-nil means to `delete-trailing-whitespace' in `verilog-auto'."
+  :version "24.1"  ; rev703
+  :group 'verilog-mode-actions
+  :type 'boolean)
+(put 'verilog-auto-delete-trailing-whitespace 'safe-local-variable #'verilog-booleanp)
+
+(defcustom verilog-auto-ignore-concat nil
+  "Non-nil means ignore signals in {...} concatenations for AUTOWIRE etc.
+This will exclude signals referenced as pin connections in {...}
+or (...) from AUTOWIRE, AUTOOUTPUT and friends.  See also AUTONOHOOKUP."
+  :group 'verilog-mode-actions
+  :type 'boolean)
+(put 'verilog-auto-ignore-concat 'safe-local-variable #'verilog-booleanp)
+
+(defcustom verilog-auto-read-includes nil
+  "Non-nil means to automatically read includes before AUTOs.
+This will do a `verilog-read-defines' and `verilog-read-includes' before
+each AUTO expansion.  This makes it easier to embed defines and includes,
+but can result in very slow reading times if there are many or large
+include files."
+  :group 'verilog-mode-actions
+  :type 'boolean)
+(put 'verilog-auto-read-includes 'safe-local-variable #'verilog-booleanp)
+
+(defcustom verilog-auto-save-policy nil
+  "Non-nil indicates action to take when saving a Verilog buffer with AUTOs.
+A value of `force' will always do a \\[verilog-auto] automatically if
+needed on every save.  A value of `detect' will do \\[verilog-auto]
+automatically when it thinks necessary.  A value of `ask' will query the
+user when it thinks updating is needed.
+You should not rely on the `ask' or `detect' policies, they are safeguards
+only.  They do not detect when AUTOINSTs need to be updated because a
+sub-module's port list has changed."
+  :group 'verilog-mode-actions
+  :type '(choice (const nil) (const ask) (const detect) (const force)))
+
+(defcustom verilog-auto-star-expand t
+  "Non-nil means to expand SystemVerilog .* instance ports.
+They will be expanded in the same way as if there was an AUTOINST in the
+instantiation.  See also `verilog-auto-star' and `verilog-auto-star-save'."
+  :group 'verilog-mode-actions
+  :type 'boolean)
+(put 'verilog-auto-star-expand 'safe-local-variable #'verilog-booleanp)
+
+(defcustom verilog-auto-star-save nil
+  "Non-nil means save to disk SystemVerilog .* instance expansions.
+A nil value indicates direct connections will be removed before saving.
+Only meaningful to those created due to `verilog-auto-star-expand' being set.
+Instead of setting this, you may want to use /*AUTOINST*/, which will
+always be saved."
+  :group 'verilog-mode-actions
+  :type 'boolean)
+(put 'verilog-auto-star-save 'safe-local-variable #'verilog-booleanp)
+#+END_SRC

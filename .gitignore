@@ -1,0 +1,7 @@
+**
+!*/
+!.gitignore
+!**.el
+!**.org
+!**.cmd
+!./lisp/**
