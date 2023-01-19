@@ -10,3 +10,4 @@
 ;; Enable theme from Doom Emacs. Themes list in info.org
 (setq ded/doom-theme 'doom-one)
 (setq ded/auto-package-update t)
+(setq ded/windows-env nil)

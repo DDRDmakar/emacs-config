@@ -96,7 +96,6 @@
   ;; Icons for tree view
   (use-package all-the-icons
 	:if (display-graphic-p)
-  :custom ((doom-modeline-icon nil))
   ))
 
 ;;==================================[ Very Large Files ]====================================
