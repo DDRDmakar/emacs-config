@@ -1,20 +1,24 @@
 
+;;==================================[ Drag stuff ]====================================
 (use-package drag-stuff
   :config
   (drag-stuff-global-mode)
   :bind (("M-<up>"   . #'drag-stuff-up)
 		 ("M-<down>" . #'drag-stuff-down)))
 
+;;==================================[ Auto complete text ]====================================
 (use-package dabbrev
   :custom
   (dabbrev-case-replace nil))
 
+;;==================================[ Ivy ]====================================
 (use-package ivy
+  :if ded/advanced-config
   :ensure t
   :ensure counsel
   :ensure ivy-rich
   :ensure ivy-hydra
-  ;;:ensure all-the-icons-ivy-rich
+  :ensure all-the-icons-ivy-rich
   :bind (("C-s" . counsel-grep-or-swiper)
          :map ivy-minibuffer-map
          ("TAB" . ivy-alt-done)	
@@ -30,10 +34,13 @@
          ("C-d" . ivy-reverse-i-search-kill))
   :init
   (ivy-rich-mode 1)
-  ;;(all-the-icons-ivy-rich-mode 1)
+  (all-the-icons-ivy-rich-mode (if ded/enable-icons 1 0))
+  (setq all-the-icons-ivy-rich-icon ded/enable-icons)
   (ivy-mode 0))
 
+;;==================================[ Counsel ]====================================
 (use-package counsel
+  :if ded/advanced-config
   :bind (
     ("M-x" . counsel-M-x)
 	  ("C-x b" . counsel-ibuffer)
@@ -48,16 +55,16 @@
   :config
   (counsel-mode 1))
 
+;;==================================[ Which-key ]====================================
 (use-package which-key
+  :if ded/super-advanced-config
   :init (which-key-mode)
   :diminish which-key-mode
   :custom
   (which-key-idle-delay 2))
 ;; Scroll with C-h n and C-h p
 
-;;(global-set-key (kbd "C-M-j") 'counsel-switch-buffer)
-;; (define-key ...) for specific mode keymap
-
+;;==================================[ General ]====================================
 (use-package general
   :config
   (general-define-key "C-M-j" 'counsel-switch-buffer)
@@ -70,9 +77,9 @@
     "<down>"  'windmove-down  
     "<left>"  'windmove-left  
     "<right>" 'windmove-right
-	)
-  )
+	))
 
+;;==================================[ Hydra ]====================================
 (use-package hydra
   :defer t)
 
@@ -85,6 +92,7 @@
 ;;(ded/leader-keys
 ;;  "ts" '(hydra-text-scale/body :which-key "scale text"))
 
+;;==================================[ Evil ]====================================
 (use-package evil
   :init
   (setq evil-want-integration t)
@@ -103,16 +111,65 @@
   (evil-set-initial-state 'messages-buffer-mode 'normal)
   (evil-set-initial-state 'dashboard-mode 'normal))
 
+;; This is a collection of Evil bindings for the parts of Emacs that Evil does not cover properly by default, such as help-mode, M-x calendar, Eshell and more.
 (use-package evil-collection
   :after evil
   :config
   (evil-collection-init))
 
+
+;;==================================[ Russian keystrokes ]====================================
+;; Support russian keyboard layout for emacs keystrokes
 (cl-loop
- for from across "йцукенгшщзхъфывапролджэячсмитьбюЙЦУКЕНГШЩЗХЪФЫВАПРОЛДЖ\ЭЯЧСМИТЬБЮ№"
- for to   across "qwertyuiop[]asdfghjkl;'zxcvbnm,.QWERTYUIOP{}ASDFGHJKL:\"ZXCVBNM<>#"
- do
- (eval `(define-key key-translation-map (kbd ,(concat "C-" (string from))) (kbd ,(concat     "C-" (string to)))))
- (eval `(define-key key-translation-map (kbd ,(concat "M-" (string from))) (kbd ,(concat     "M-" (string to))))))
+  for from across "йцукенгшщзхъфывапролджэячсмитьбюЙЦУКЕНГШЩЗХЪФЫВАПРОЛДЖ\ЭЯЧСМИТЬБЮ№."
+  for to   across "qwertyuiop[]asdfghjkl;'zxcvbnm,.QWERTYUIOP{}ASDFGHJKL:\"ZXCVBNM<>#/"
+  do
+  (eval `(define-key key-translation-map (kbd ,(concat "C-" (string from))) (kbd ,(concat     "C-" (string to)))))
+  (eval `(define-key key-translation-map (kbd ,(concat "M-" (string from))) (kbd ,(concat     "M-" (string to))))))
 
+;;==================================[ Backtab ]====================================
+(defun indent-region-custom(numSpaces)
+  (progn 
+    ;; default to start and end of current line
+    (setq regionStart (line-beginning-position))
+    (setq regionEnd (line-end-position))
+    
+    ;; if there's a selection, use that instead of the current line
+    (when (use-region-p)
+      (setq regionStart (region-beginning))
+      (setq regionEnd (region-end))
+      )
+    
+    (save-excursion ; restore the position afterwards            
+      (goto-char regionStart) ; go to the start of region
+      (setq start (line-beginning-position)) ; save the start of the line
+      (goto-char regionEnd) ; go to the end of region
+      (setq end (line-end-position)) ; save the end of the line
+      
+      (indent-rigidly start end numSpaces) ; indent between start and end
+      (setq deactivate-mark nil) ; restore the selected region
+      )
+    )
+  )
 
+(defun untab-region (N)
+  (interactive "p")
+  (indent-region-custom (* tab-width -1))
+)
+
+;;(defun tab-region (N)
+;;  (interactive "p")
+;;  (if (active-minibuffer-window)
+;;    (minibuffer-complete)    ; tab is pressed in minibuffer window -> do completion
+;;  ;; else
+;;  (if (string= (buffer-name) "*shell*")
+;;    (comint-dynamic-complete) ; in a shell, use tab completion
+;;  ;; else
+;;  (if (use-region-p)    ; tab is pressed is any other buffer -> execute with space insertion
+;;    (indent-region-custom 4) ; region was selected, call indent-region-custom
+;;    (insert "    ") ; else insert four spaces as expected
+;;  )))
+;;)
+
+(global-set-key (kbd "<backtab>") 'untab-region)
+;;(global-set-key (kbd "<tab>") 'tab-region)

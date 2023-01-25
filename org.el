@@ -36,8 +36,8 @@
   (auto-fill-mode 0)
   (setq truncate-lines nil))
 
-(when ded/advanced-config
-  (use-package org
+(use-package org
+  :if ded/advanced-config
 	:pin org
 	:commands (org-capture org-agenda)
 	:hook (org-mode . ded/org-mode-setup)
@@ -48,7 +48,7 @@
 	(setq org-log-done 'time)
 	(setq org-log-into-drawer t)
 	(setq org-hide-emphasis-markers t)
-	(ded/org-font-setup)))
+	(ded/org-font-setup))
 
 
   ;;(setq org-agenda-files
@@ -162,11 +162,11 @@
   ;;(define-key global-map (kbd "C-c j")
   ;;  (lambda () (interactive) (org-capture nil "jj")))
 
-(when ded/advanced-config
-  (use-package org-bullets
+(use-package org-bullets
+  :if ded/advanced-config
 	:hook (org-mode . org-bullets-mode)
 	:custom
-	(org-bullets-bullet-list '("◉" "○" "●" "○" "●" "○" "●"))))
+	(org-bullets-bullet-list '("◉" "○" "●" "○" "●" "○" "●")))
 
 ;;(defun ded/org-mode-visual-fill ()
 ;;  (setq visual-fill-column-width 100

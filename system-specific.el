@@ -1,7 +1,9 @@
 
 ;;==================================[ Variables tweaking config ]====================================
+
 (setq ded/advanced-config t) ;; Enable advanced functions
 (setq ded/super-advanced-config t) ;; Enable super-advanced functions
+
 (setq ded/mono-font "Hack")
 (setq ded/sans-font "Liberation Sans")
 (setq ded/fira-code t)
@@ -9,5 +11,13 @@
 (setq ded/material-theme nil) ;; Enable simple material theme
 ;; Enable theme from Doom Emacs. Themes list in info.org
 (setq ded/doom-theme 'doom-one)
+(setq ded/enable-icons t)
 (setq ded/auto-package-update t)
 (setq ded/windows-env nil)
+
+
+;;==================================[ Non-customizable stuff ]====================================
+;; Windows kostyl
+(when ded/windows-env
+  (setq treemacs-python-executable "C:\\Users\\PSPOD\\AppData\\Local\\Programs\\Python\\Python310\\python.exe")
+)

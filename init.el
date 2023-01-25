@@ -63,16 +63,16 @@
 (setq use-package-always-ensure t)
 
 ;; Keep packages up-to-date
-(when ded/auto-package-update
-  (use-package auto-package-update
-    :custom
-    (auto-package-update-interval 7)
-    (auto-package-update-prompt-before-update t)
-    (auto-package-update-hide-results nil)
-    :config
-    (auto-package-update-maybe)
-    ;;(auto-package-update-at-time "09:00")
-    ))
+(use-package auto-package-update
+  :if ded/auto-package-update
+  :custom
+  (auto-package-update-interval 7)
+  (auto-package-update-prompt-before-update t)
+  (auto-package-update-hide-results nil)
+  :config
+  (auto-package-update-maybe)
+  ;;(auto-package-update-at-time "09:00")
+  )
 
 ;;==================================[ Load other config parts ]====================================
 
@@ -80,6 +80,7 @@
 (load-user-file "other.el")
 (load-user-file "org.el")
 (load-user-file "hdl.el")
+(load-user-file "visual.el")
 (load-user-file "addition.el")
 
 (load-user-file "variables.el") ;; Should be executed after loading all modules

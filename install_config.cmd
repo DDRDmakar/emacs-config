@@ -14,6 +14,7 @@ cp ./hdl.el "$EMACS_CONFIG_DIR"
 cp ./other.el "$EMACS_CONFIG_DIR"
 cp ./addition.el "$EMACS_CONFIG_DIR"
 cp ./variables.el "$EMACS_CONFIG_DIR"
+cp ./visual.el "$EMACS_CONFIG_DIR"
 cp ./info.org "$EMACS_CONFIG_DIR"
 
 if [ $# -eq 1 ] # Copy system-specific config too if 1 argument is supplied
@@ -39,6 +40,7 @@ copy hdl.el "%EMACS_CONFIG_DIR%"
 copy other.el "%EMACS_CONFIG_DIR%"
 copy addition.el "%EMACS_CONFIG_DIR%"
 copy variables.el "%EMACS_CONFIG_DIR%"
+copy visual.el "%EMACS_CONFIG_DIR%"
 copy info.org "%EMACS_CONFIG_DIR%"
 
 ::=====[ End CMD script ]=====::
