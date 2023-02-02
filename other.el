@@ -64,8 +64,10 @@
   )
 
 ;;==================================[ Languages ]====================================
-(use-package rust-mode)
-(use-package kotlin-mode)
+(when ded/advanced-config
+  (use-package rust-mode)
+  (use-package kotlin-mode)
+  )
 (when ded/super-advanced-config
   (use-package lsp-mode)
   )

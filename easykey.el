@@ -12,12 +12,15 @@
   (dabbrev-case-replace nil))
 
 ;;==================================[ Ivy ]====================================
+(use-package ivy-rich
+  :if ded/advanced-config)
+(use-package ivy-hydra
+  :if ded/advanced-config)
+
 (use-package ivy
-  :if ded/advanced-config
+  ;;:if ded/advanced-config
   :ensure t
   :ensure counsel
-  :ensure ivy-rich
-  :ensure ivy-hydra
   :ensure all-the-icons-ivy-rich
   :bind (("C-s" . counsel-grep-or-swiper)
          :map ivy-minibuffer-map
@@ -33,10 +36,11 @@
          ("C-k" . ivy-previous-line)
          ("C-d" . ivy-reverse-i-search-kill))
   :init
-  (ivy-rich-mode 1)
+  (ivy-rich-mode (if ded/advanced-config 1 0))
+  (ivy-mode      (if ded/advanced-config 0 1))
   (all-the-icons-ivy-rich-mode (if ded/enable-icons 1 0))
   (setq all-the-icons-ivy-rich-icon ded/enable-icons)
-  (ivy-mode 0))
+  )
 
 ;;==================================[ Counsel ]====================================
 (use-package counsel

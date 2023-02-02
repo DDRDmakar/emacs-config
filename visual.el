@@ -103,6 +103,12 @@
     (doom-modeline-workspace-name nil))
   )
 
+(use-package minions
+  :if (not ded/super-advanced-config)
+  :config
+  (minions-mode (if ded/super-advanced-config 0 1))
+  )
+
 ;;==================================[ Icons ]====================================
 ;; Icons for tree view
 (use-package all-the-icons
@@ -122,7 +128,7 @@
   :custom
   (neo-window-fixed-size nil))
 
-(when ded/advanced-config
+(when ded/super-advanced-config
   (use-package treemacs
     :bind
     (:map global-map
@@ -229,7 +235,13 @@
 
 ;;==================================[ Whitespace mode ]====================================
 (use-package whitespace
-  :if ded/advanced-config)
+  :if ded/advanced-config
+  :custom
+  (whitespace-line-column 250)
+  :config
+  (add-hook 'whitespace-mode-hook
+    (lambda () (highlight-indent-guides-mode 0)))
+  )
 
 ;;==================================[ Startup dashboard ]====================================
 (use-package dashboard
@@ -237,7 +249,7 @@
   :ensure t
   :config
   (dashboard-setup-startup-hook)
-  (setq dashboard-center-content t)
+    (setq dashboard-center-content t)
     (setq dashboard-set-heading-icons ded/enable-icons)
     (setq dashboard-set-file-icons ded/enable-icons)
   )
