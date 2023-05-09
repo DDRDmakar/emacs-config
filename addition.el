@@ -49,3 +49,22 @@
 
 ;;(use-package vterm
 ;;    :load-path "~/.emacs.d/lisp/emacs-libvterm-master/vterm.el")
+
+(setq ediff-split-window-function #'split-window-vertically)
+
+(setq history-delete-duplicates t)
+(setq comint-input-ignoredups t)
+
+;;(use-package workgroups2
+;;  :config
+;;  (workgroups-mode 1)
+;;  )
+
+
+(global-set-key (kbd "C-x ы") 'save-some-buffers)
+(global-set-key (kbd "C-x л") 'kill-buffer)
+(global-set-key (kbd "C-x к е") 'string-rectangle)
+(global-set-key (kbd "C-x к в") 'delete-rectangle)
+(global-set-key (kbd "M-s р з") 'highlight-phrase)
+(global-set-key (kbd "M-s р к") 'highlight-regexp)
+(global-set-key (kbd "M-s р г") 'unhighlight-regexp)

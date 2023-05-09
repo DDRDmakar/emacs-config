@@ -11,7 +11,7 @@
 (setq ded/material-theme nil) ;; Enable simple material theme
 ;; Enable theme from Doom Emacs. Themes list in info.org
 (setq ded/doom-theme 'doom-one)
-(setq ded/enable-icons t)
+(setq ded/enable-icons t) ;; Warning!!! Do not forget to run all-the-icons-install-fonts after applying config
 (setq ded/auto-package-update t)
 (setq ded/windows-env nil)
 

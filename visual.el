@@ -238,9 +238,15 @@
   :if ded/advanced-config
   :custom
   (whitespace-line-column 250)
+
   :config
   (add-hook 'whitespace-mode-hook
     (lambda () (highlight-indent-guides-mode 0)))
+  (setq dashboard-items '((recents  . 10)
+                        (bookmarks . 5)
+                        (projects . 5)
+                        (agenda . 5)
+                        (registers . 5)))
   )
 
 ;;==================================[ Startup dashboard ]====================================
@@ -252,6 +258,8 @@
     (setq dashboard-center-content t)
     (setq dashboard-set-heading-icons ded/enable-icons)
     (setq dashboard-set-file-icons ded/enable-icons)
+    (unless ded/enable-icons
+      (setq dashboard-footer-icon ?\s))
   )
 
 ;;==================================[ Distraction-free mode ]====================================

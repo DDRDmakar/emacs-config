@@ -6,7 +6,7 @@
 
 ;;(menu-bar-mode -1)
 (tool-bar-mode -1)
-;;(scroll-bar-mode -1)
+(scroll-bar-mode -1)
 ;;(tooltip-mode -1)
 
 ;;(set-fringe-mode 10) ; Word wrap marks
@@ -17,7 +17,6 @@
       ring-bell-function 'ignore)
 ;;(global-visual-line-mode 1) ; Wrap words by default
 ;;(global-hl-line-mode 1) ; Highlight current line
-;;(add-hook 'find-file-hook (lambda () (setq buffer-read-only t)))
 
 ;; Locale
 (set-language-environment "UTF-8")
@@ -127,3 +126,6 @@
     '(
       ("/[Kk]build\\'" . makefile-gmake-mode))
     auto-mode-alist))
+
+;;==================================[ Open files read-only ]====================================
+(add-hook 'find-file-hook (lambda () (setq buffer-read-only t)))

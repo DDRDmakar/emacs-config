@@ -1,4 +1,9 @@
 
+* Make magit faster on Windows
+: git config --global core.preloadindex true   # default since v2.1
+: git config --global core.fscache true        # default since v2.8
+: git config --global gc.auto 256
+
 * Doom themes list
 doom-1337 	link 	ported from VSCode's 1337 theme (ported by @ccmywish)
 doom-acario-dark 	original 	an original dark theme (ported by @gagbo)
