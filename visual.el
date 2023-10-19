@@ -255,13 +255,25 @@
   :ensure t
   :config
   (dashboard-setup-startup-hook)
-    (setq dashboard-center-content t)
-    (setq dashboard-set-heading-icons ded/enable-icons)
-    (setq dashboard-set-file-icons ded/enable-icons)
-    (unless ded/enable-icons
-      (setq dashboard-footer-icon ?\s))
+  (setq dashboard-center-content t)
+  (setq dashboard-set-heading-icons ded/enable-icons)
+  (setq dashboard-set-file-icons ded/enable-icons)
+  (unless ded/enable-icons
+    (setq dashboard-footer-icon ?\s))
   )
+
+;; Display ^L page breaks as tidy horizontal lines
+(use-package page-break-lines)
 
 ;;==================================[ Distraction-free mode ]====================================
 (use-package writeroom-mode
   :if ded/super-advanced-config)
+
+;;==================================[ Git diff highlight in left column ]====================================
+(use-package diff-hl
+  :if ded/super-advanced-config
+  :config
+  (global-diff-hl-mode)
+  (add-hook 'magit-pre-refresh-hook 'diff-hl-magit-pre-refresh)
+  (add-hook 'magit-post-refresh-hook 'diff-hl-magit-post-refresh)
+  (setq diff-hl-disable-on-remote t))

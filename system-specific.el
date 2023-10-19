@@ -13,11 +13,13 @@
 (setq ded/doom-theme 'doom-one)
 (setq ded/enable-icons t) ;; Warning!!! Do not forget to run all-the-icons-install-fonts after applying config
 (setq ded/auto-package-update t)
+(setq ded/open-files-read-only nil) ;; May cause problems!
 (setq ded/windows-env nil)
 
 
 ;;==================================[ Non-customizable stuff ]====================================
 ;; Windows kostyl
+;; (when (eq window-system 'w32) ...)
 (when ded/windows-env
   (setq treemacs-python-executable "C:\\Users\\PSPOD\\AppData\\Local\\Programs\\Python\\Python310\\python.exe")
 )

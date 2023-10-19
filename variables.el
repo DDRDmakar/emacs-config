@@ -30,6 +30,12 @@
 (setq mouse-drag-and-drop-region t)
 (setq mouse-drag-and-drop-region-cut-when-buffers-differ t)
 
+(setq scroll-conservatively 101) ;; Scroll just enough to keep cursor on screen
+
+;; Remap C-x C-c to something else to stop occasionaly exiting emacs
+;; Command to exit emacs: save-buffers-kill-emacs
+(global-set-key "\C-x\C-c" 'whitespace-mode)
+
 ;;==================================[ TABs ]====================================
 ;; C-like languages
 (setq-default indent-tabs-mode t)
@@ -128,4 +134,36 @@
     auto-mode-alist))
 
 ;;==================================[ Open files read-only ]====================================
-(add-hook 'find-file-hook (lambda () (setq buffer-read-only t)))
+(when ded/open-files-read-only
+  (add-hook 'find-file-hook (lambda ()
+    (unless (or (= (buffer-size buffer-file-name) 0)
+                (string-match-p ".git/COMMIT_EDITMSG\\'" buffer-file-name))
+      (setq buffer-read-only t)) )))
+
+;;==================================[ Backups ]====================================
+;; Save all backups into separate folder
+;;(setq make-backup-files nil) ;; Disable all backups
+
+;;(setq my-backups-dir "~/EmacsBackups")
+;;(create-dir-if-not-exists my-backups-dir)
+;;(setq backup-directory-alist `(("." . ,my-backups-dir)))
+
+;;(setq backup-by-copying-when-linked t)
+;;(setq delete-old-versions t
+;;  kept-new-versions 6
+;;  kept-old-versions 2
+;;  ;;version-control t
+;;  )
+
+;;(defun my-make-backup-file-name (FILE)
+;;  (let ((dirname (concat my-backups-dir
+;;                         (format-time-string "%y/%m/%d/"))))
+;;    (create-dir-if-not-exists dirname)
+;;    (concat dirname (file-name-nondirectory FILE))))
+;;
+;;(setq make-backup-file-name-function #'my-make-backup-file-name)
+
+;;(setq auto-save-default nil) ;; Disable auto save
+;;(setq auto-save-interval 1000) ;; Auto save every N characters
+;;(setq auto-save-visited-interval 600) ;; Auto save every N seconds
+;;(setq auto-save-timeout 600) ;; Auto save every N seconds

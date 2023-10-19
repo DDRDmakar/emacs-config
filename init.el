@@ -20,9 +20,13 @@
   (interactive "f")
   (load-file (expand-file-name file user-init-dir)))
 
-(defun create-if-not-exists (filePath)
+(defun create-file-if-not-exists (filePath)
   (unless (file-exists-p filePath)
     (with-temp-buffer (write-file filePath))))
+
+(defun create-dir-if-not-exists (dirPath)
+  (unless (file-directory-p dirPath)
+    (make-directory dirPath)))
 
 ;; Display file name command
 (defun show-file-name ()
@@ -30,12 +34,35 @@
   (interactive)
   (message (buffer-file-name)))
 
+(defun int-to-binary-string (x &optional w)
+  "Convert an integer into it's binary representation in string format"
+  (let ((a x) (res ""))
+    ;; Make number positive if it is negative
+    (when (< a 0)
+      (setq a (if w
+        (+ a (expt 2 w))
+        (* a -1))))
+    (when (< a 0) ())
+    ;; Write bits into string
+    (setq res
+      (concat (mapcar
+        (lambda (i) (if (= (logand a (lsh 1 i)) 0) ?0 ?1))
+        (number-sequence (- (ceiling (log (+ a 1) 2)) 1) 0 -1))))
+    ;; Pad start with zeros if needed
+    (when  (and w (< (length res) w))
+      (setq res
+        (concat
+          (make-string (- w (length res)) ?0)
+          res)))
+    ;; Return string representation
+    res))
+
 ;;==================================[ Load system-specific config ]====================================
 (load-user-file "system-specific.el")
 
 ;; Custom set variables
 (setq custom-file (expand-file-name "custom.el" user-init-dir))
-(create-if-not-exists custom-file)
+(create-file-if-not-exists custom-file)
 
 ;;==================================[ Packages ]====================================
 

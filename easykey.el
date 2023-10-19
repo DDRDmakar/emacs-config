@@ -40,7 +40,18 @@
   (ivy-mode      (if ded/advanced-config 0 1))
   (all-the-icons-ivy-rich-mode (if ded/enable-icons 1 0))
   (setq all-the-icons-ivy-rich-icon ded/enable-icons)
+  (setq history-delete-duplicates t)
+  (setq comint-input-ignoredups t)
   )
+
+;; Additional sorting and searching algorithms for ivy
+;; Should be activated after ivy and counsel
+(use-package prescient
+  :if ded/advanced-config)
+(use-package ivy-prescient
+  :if ded/advanced-config
+  :config
+  (ivy-prescient-mode))
 
 ;;==================================[ Counsel ]====================================
 (use-package counsel
@@ -131,6 +142,17 @@
   (eval `(define-key key-translation-map (kbd ,(concat "C-" (string from))) (kbd ,(concat     "C-" (string to)))))
   (eval `(define-key key-translation-map (kbd ,(concat "M-" (string from))) (kbd ,(concat     "M-" (string to))))))
 
+(global-set-key (kbd "C-x ы") 'save-some-buffers)
+(global-set-key (kbd "C-x л") 'kill-buffer)
+(global-set-key (kbd "C-x и") 'counsel-ibuffer)
+(global-set-key (kbd "C-c и") 'counsel-projectile-switch-to-buffer)
+(global-set-key (kbd "C-x к е") 'string-rectangle)
+(global-set-key (kbd "C-x к в") 'delete-rectangle)
+(global-set-key (kbd "M-s р з") 'highlight-phrase)
+(global-set-key (kbd "M-s р к") 'highlight-regexp)
+(global-set-key (kbd "M-s р г") 'unhighlight-regexp)
+(global-set-key (kbd "M-s р ю") 'highlight-symbol-at-point)
+
 ;;==================================[ Backtab ]====================================
 (defun indent-region-custom(numSpaces)
   (progn 
@@ -177,3 +199,13 @@
 
 (global-set-key (kbd "<backtab>") 'untab-region)
 ;;(global-set-key (kbd "<tab>") 'tab-region)
+
+
+;;==================================[ Multiple cursors ]====================================
+(use-package multiple-cursors
+  :if ded/advanced-config)
+
+;;==================================[ Tiny-expand ]====================================
+(use-package tiny
+  :config
+  (tiny-setup-default))

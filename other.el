@@ -9,11 +9,6 @@
   :ensure t
   :ensure git-modes
   ;;:ensure evil-magit
-  :config
-  (load "magit-pretty-graph")
-  (define-key magit-mode-map 
-    (kbd "q") 
-    (lambda() (interactive) (magit-mode-bury-buffer t)))
   :init
   (general-create-definer ded/magit-keys :prefix "C-c")
   (ded/magit-keys
@@ -31,8 +26,19 @@
 	"gf" 'magit-fetch
 	"gF" 'magit-fetch-all
 	"gr" 'magit-rebase)
+  :config
+  (load "magit-pretty-graph") ;; local
+  (define-key magit-mode-map 
+    (kbd "q") 
+    (lambda() (interactive) (magit-mode-bury-buffer t)))
+  (global-set-key (kbd "C-x g") 'magit-status)
+  (add-hook 'magit-status-mode-hook
+    (lambda () (tab-line-mode t)))
+  (add-hook 'magit-log-mode-hook
+    (lambda () (tab-line-mode t)))
   :custom
   (magit-display-buffer-function #'magit-display-buffer-same-window-except-diff-v1)
+  (ediff-split-window-function #'split-window-vertically)
   :bind
   (:map global-map
         ("C-M-;" . magit-status)))
@@ -72,3 +78,28 @@
   (use-package lsp-mode)
   )
 
+;;==================================[ Tramp ]====================================
+(use-package counsel-tramp
+  :config
+  (setq tramp-default-method "ssh")
+  (define-key global-map (kbd "C-c t") 'counsel-tramp)
+  )
+
+;;==================================[ Markdown ]====================================
+(use-package markdown-mode
+  :if ded/advanced-config
+  :ensure t
+  :mode ("README\\.md\\'" . gfm-mode)
+  :init (setq markdown-command "multimarkdown"))
+
+;;==================================[ Dired+ ]====================================
+(use-package dired+ ;; local
+  :if ded/advanced-config
+  :load-path "~/.emacs.d/lisp/dired+.el"
+  :defer 1
+  :init
+  (setq diredp-hide-details-initially-flag nil)
+  (setq diredp-hide-details-propagate-flag nil)
+
+  :config
+  (diredp-toggle-find-file-reuse-dir 1))
