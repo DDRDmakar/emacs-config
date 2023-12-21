@@ -1,3 +1,8 @@
+;;-------------------------------------
+;; Nikita Makarevich (DDRDmakar) 2021-2023
+;; dedrtos@gmail.com
+;; Distributed under MIT license
+;;-------------------------------------
 
 ;; https://www.veripool.org/verilog-mode/help/
 (use-package verilog-mode

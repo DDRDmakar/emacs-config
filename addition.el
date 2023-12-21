@@ -1,3 +1,9 @@
+;;-------------------------------------
+;; Nikita Makarevich (DDRDmakar) 2021-2023
+;; dedrtos@gmail.com
+;; Distributed under MIT license
+;;-------------------------------------
+
 ;; TODO yasnippet
 
 ;;(progn

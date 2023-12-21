@@ -1,6 +1,7 @@
 ;;-------------------------------------
-;; Nikita Makarevich (DDRDmakar) 2021,2022
-;; makarevich.98@mail.ru
+;; Nikita Makarevich (DDRDmakar) 2021-2023
+;; dedrtos@gmail.com
+;; Distributed under MIT license
 ;;-------------------------------------
 
 ;; Speed-up startup time

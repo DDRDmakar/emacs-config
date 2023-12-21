@@ -1,3 +1,8 @@
+;;-------------------------------------
+;; Nikita Makarevich (DDRDmakar) 2021-2023
+;; dedrtos@gmail.com
+;; Distributed under MIT license
+;;-------------------------------------
 
 (defun ded/org-font-setup ()
   ;; Replace list hyphen with triangle
