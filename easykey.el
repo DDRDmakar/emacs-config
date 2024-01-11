@@ -51,12 +51,15 @@
 
 ;; Additional sorting and searching algorithms for ivy
 ;; Should be activated after ivy and counsel
-(use-package prescient
-  :if ded/advanced-config)
-(use-package ivy-prescient
-  :if ded/advanced-config
+;;(use-package prescient
+;;  :if ded/advanced-config)
+;;(use-package ivy-prescient
+;;  :if ded/advanced-config
+;;  :config
+;;  (ivy-prescient-mode))
+(use-package smex
   :config
-  (ivy-prescient-mode))
+  (smex-initialize))
 
 ;;==================================[ Counsel ]====================================
 (use-package counsel

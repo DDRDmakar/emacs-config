@@ -28,3 +28,10 @@
 ;;             (str (propertize " " 'display `(space :align-to (- right ,hpos 3)))))
 ;;        `((align-right menu-item ,str ignore)))))
 ;;  )
+
+(setq backward-delete-char-untabify-method 'hungry)
+
+;; TODO
+;; (all-the-icons-ivy-rich-mode (if ded/enable-icons 1 0))
+;;    (setq all-the-icons-ivy-rich-icon ded/enable-icons)
+
