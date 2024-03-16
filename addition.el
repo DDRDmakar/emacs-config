@@ -35,3 +35,27 @@
 ;; (all-the-icons-ivy-rich-mode (if ded/enable-icons 1 0))
 ;;    (setq all-the-icons-ivy-rich-icon ded/enable-icons)
 
+;; TODO set up fixed-pitch face for Windows
+(progn
+  ;; Ensure that anything that should be fixed-pitch in Org files appears that way
+  (set-face-attribute 'fixed-pitch nil :font ded/mono-font)
+  (set-face-attribute 'org-block nil    :foreground nil :inherit 'fixed-pitch)
+  (set-face-attribute 'org-table nil    :inherit 'fixed-pitch)
+  (set-face-attribute 'org-formula nil  :inherit 'fixed-pitch)
+  (set-face-attribute 'org-code nil     :inherit '(shadow fixed-pitch))
+  (set-face-attribute 'org-table nil    :inherit '(shadow fixed-pitch))
+  (set-face-attribute 'org-verbatim nil :inherit '(shadow fixed-pitch))
+  (set-face-attribute 'org-special-keyword nil :inherit '(font-lock-comment-face fixed-pitch))
+  (set-face-attribute 'org-meta-line nil :inherit '(font-lock-comment-face fixed-pitch))
+  (set-face-attribute 'org-checkbox nil  :inherit 'fixed-pitch)
+  (set-face-attribute 'line-number nil :inherit 'fixed-pitch)
+  (set-face-attribute 'line-number-current-line nil :inherit 'fixed-pitch)
+  )
+
+;; A modern list API for Emacs
+(use-package dash)
+
+(use-package fpga)
+
+;;(use-package direx)
+;;(global-set-key (kbd "C-x C-j") 'direx:jump-to-directory)

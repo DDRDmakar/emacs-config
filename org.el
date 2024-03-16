@@ -22,6 +22,7 @@
     (set-face-attribute (car face) nil :font ded/sans-font :weight 'regular :height (cdr face)))
 
   ;; Ensure that anything that should be fixed-pitch in Org files appears that way
+  (set-face-attribute 'fixed-pitch nil  :font ded/mono-font)
   (set-face-attribute 'org-block nil    :foreground nil :inherit 'fixed-pitch)
   (set-face-attribute 'org-table nil    :inherit 'fixed-pitch)
   (set-face-attribute 'org-formula nil  :inherit 'fixed-pitch)
