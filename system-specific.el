@@ -1,5 +1,5 @@
 ;;-------------------------------------
-;; Nikita Makarevich (DDRDmakar) 2021-2023
+;; Nikita Makarevich (DDRDmakar) 2021-2024
 ;; dedrtos@gmail.com
 ;; Distributed under MIT license
 ;;-------------------------------------

@@ -1,5 +1,5 @@
 ;;-------------------------------------
-;; Nikita Makarevich (DDRDmakar) 2021-2023
+;; Nikita Makarevich (DDRDmakar) 2021-2024
 ;; dedrtos@gmail.com
 ;; Distributed under MIT license
 ;;-------------------------------------
@@ -172,3 +172,7 @@
 ;;(setq auto-save-interval 1000) ;; Auto save every N characters
 ;;(setq auto-save-visited-interval 600) ;; Auto save every N seconds
 ;;(setq auto-save-timeout 600) ;; Auto save every N seconds
+
+;;==================================[ Disable automatically adding newline at the end of file ]====================================
+(setq require-final-newline nil)
+(setq mode-require-final-newline nil)

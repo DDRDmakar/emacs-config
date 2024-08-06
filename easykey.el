@@ -1,5 +1,5 @@
 ;;-------------------------------------
-;; Nikita Makarevich (DDRDmakar) 2021-2023
+;; Nikita Makarevich (DDRDmakar) 2021-2024
 ;; dedrtos@gmail.com
 ;; Distributed under MIT license
 ;;-------------------------------------
@@ -61,6 +61,34 @@
   :config
   (smex-initialize))
 
+;; Cache ivy files/buffers list to prevent UI freezing
+(eval-after-load 'ivy-rich
+  (progn
+    (defvar ek/ivy-rich-cache
+      (make-hash-table :test 'equal))
+
+    (defun ek/ivy-rich-cache-lookup (delegate candidate)
+      (let ((result (gethash candidate ek/ivy-rich-cache)))
+        (unless result
+          (setq result (funcall delegate candidate))
+          (puthash candidate result ek/ivy-rich-cache))
+        result))
+
+    (defun ek/ivy-rich-cache-reset ()
+      (clrhash ek/ivy-rich-cache))
+
+    (defun ek/ivy-rich-cache-rebuild ()
+      (mapc (lambda (buffer)
+              (ivy-rich--ivy-switch-buffer-transformer (buffer-name buffer)))
+            (buffer-list)))
+
+    (defun ek/ivy-rich-cache-rebuild-trigger ()
+      (ek/ivy-rich-cache-reset)
+      (run-with-idle-timer 1 nil 'ek/ivy-rich-cache-rebuild))
+
+    (advice-add 'ivy-rich--ivy-switch-buffer-transformer :around 'ek/ivy-rich-cache-lookup)
+    (advice-add 'ivy-switch-buffer :after 'ek/ivy-rich-cache-rebuild-trigger)))
+
 ;;==================================[ Counsel ]====================================
 (use-package counsel
   :if ded/advanced-config
@@ -76,7 +104,8 @@
   (counsel-linux-app-format-function #'counsel-linux-app-format-function-name-only)
   ;;(ivy-initial-inputs-alist nil) ; Don't start searches with ^
   :config
-  (counsel-mode 1))
+  (counsel-mode 1)
+  (setq counsel-find-file-ignore-regexp ".*~")) ;; Ignore ~ backup files in counsel file lists
 
 ;;==================================[ Which-key ]====================================
 (use-package which-key
@@ -208,6 +237,7 @@
 (global-set-key (kbd "<backtab>") 'untab-region)
 ;;(global-set-key (kbd "<tab>") 'tab-region)
 
+(setq backward-delete-char-untabify-method 'hungry)
 
 ;;==================================[ Multiple cursors ]====================================
 (use-package multiple-cursors
@@ -217,3 +247,8 @@
 (use-package tiny
   :config
   (tiny-setup-default))
+
+;;==================================[ Auto-detect indentation size and tabs in opened buffer ]====================================
+(use-package dtrt-indent
+  :if ded/advanced-config
+  :config (dtrt-indent-mode t))

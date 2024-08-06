@@ -1,5 +1,5 @@
 ;;-------------------------------------
-;; Nikita Makarevich (DDRDmakar) 2021-2023
+;; Nikita Makarevich (DDRDmakar) 2021-2024
 ;; dedrtos@gmail.com
 ;; Distributed under MIT license
 ;;-------------------------------------
@@ -57,6 +57,11 @@
           res)))
     ;; Return string representation
     res))
+
+(defun ded/copy-current-path ()
+  "Copy the current directory into the kill ring."
+  (interactive)
+  (kill-new default-directory))
 
 ;;==================================[ Load system-specific config ]====================================
 (load-user-file "system-specific.el")

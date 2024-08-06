@@ -1,5 +1,5 @@
 ;;-------------------------------------
-;; Nikita Makarevich (DDRDmakar) 2021-2023
+;; Nikita Makarevich (DDRDmakar) 2021-2024
 ;; dedrtos@gmail.com
 ;; Distributed under MIT license
 ;;-------------------------------------
@@ -8,7 +8,7 @@
   ;; Replace list hyphen with triangle
   (font-lock-add-keywords 'org-mode
                           '(("^ *\\([-]\\) "
-                             (0 (prog1 () (compose-region (match-beginning 1) (match-end 1) "►"))))))
+                             (0 (prog1 () (compose-region (match-beginning 1) (match-end 1) "■"))))))
 
   ;; Set faces for heading levels
   (dolist (face '((org-level-1 . 1.2)
@@ -33,7 +33,25 @@
   (set-face-attribute 'org-meta-line nil :inherit '(font-lock-comment-face fixed-pitch))
   (set-face-attribute 'org-checkbox nil  :inherit 'fixed-pitch)
   (set-face-attribute 'line-number nil :inherit 'fixed-pitch)
-  (set-face-attribute 'line-number-current-line nil :inherit 'fixed-pitch))
+  (set-face-attribute 'line-number-current-line nil :inherit 'fixed-pitch)
+
+  ;; TODO set up fixed-pitch face for Windows
+  (when ded/windows-env
+    (progn
+      ;; Ensure that anything that should be fixed-pitch in Org files appears that way
+      (set-face-attribute 'fixed-pitch nil :font ded/mono-font)
+      (set-face-attribute 'org-block nil    :foreground nil :inherit 'fixed-pitch)
+      (set-face-attribute 'org-table nil    :inherit 'fixed-pitch)
+      (set-face-attribute 'org-formula nil  :inherit 'fixed-pitch)
+      (set-face-attribute 'org-code nil     :inherit '(shadow fixed-pitch))
+      (set-face-attribute 'org-table nil    :inherit '(shadow fixed-pitch))
+      (set-face-attribute 'org-verbatim nil :inherit '(shadow fixed-pitch))
+      (set-face-attribute 'org-special-keyword nil :inherit '(font-lock-comment-face fixed-pitch))
+      (set-face-attribute 'org-meta-line nil :inherit '(font-lock-comment-face fixed-pitch))
+      (set-face-attribute 'org-checkbox nil  :inherit 'fixed-pitch)
+      (set-face-attribute 'line-number nil :inherit 'fixed-pitch)
+      (set-face-attribute 'line-number-current-line nil :inherit 'fixed-pitch)
+      )))
 
 (defun ded/org-mode-setup ()
   (org-indent-mode)
@@ -44,17 +62,24 @@
 
 (use-package org
   :if ded/advanced-config
-	:pin org
-	:commands (org-capture org-agenda)
-	:hook (org-mode . ded/org-mode-setup)
-	:config
-	(setq org-ellipsis " ▾")
-	
-	(setq org-agenda-start-with-log-mode t)
-	(setq org-log-done 'time)
-	(setq org-log-into-drawer t)
-	(setq org-hide-emphasis-markers t)
-	(ded/org-font-setup))
+  :pin org
+  :commands (org-capture org-agenda)
+  :hook (org-mode . ded/org-mode-setup)
+  :config
+  (setq org-ellipsis " ▾")
+
+  (setq org-agenda-start-with-log-mode t)
+  (setq org-log-done 'time)
+  (setq org-log-into-drawer t)
+  (setq org-hide-emphasis-markers t)
+  (setq org-image-actual-width nil)
+  (setq org-support-shift-select t) ;; Select with shift key in org mode
+  ;; Add more states for TODO items
+  (setq org-todo-keywords
+        '((sequence "TODO(t)" "DOING(c)" "VERIFY(v)" "|" "DONE(d)" "HOLD(h)" "FAIL(f)" "ABORT(a)" "DELEGATED(o)")
+          ;;(sequence "REPORT(r)" "BUG(b)" "KNOWNCAUSE(k)" "|" "FIXED(f)")
+          ))
+  (ded/org-font-setup))
 
 
   ;;(setq org-agenda-files
@@ -170,9 +195,9 @@
 
 (use-package org-bullets
   :if ded/advanced-config
-	:hook (org-mode . org-bullets-mode)
-	:custom
-	(org-bullets-bullet-list '("◉" "○" "●" "○" "●" "○" "●")))
+  :hook (org-mode . org-bullets-mode)
+  :custom
+  (org-bullets-bullet-list '("◉" "○" "●" "⦾" "○" "●" "○" "●")))
 
 ;;(defun ded/org-mode-visual-fill ()
 ;;  (setq visual-fill-column-width 100
@@ -184,12 +209,12 @@
 
 (when ded/advanced-config
   (with-eval-after-load 'org
-	(org-babel-do-load-languages
+  (org-babel-do-load-languages
      'org-babel-load-languages
      '((emacs-lisp . t)
        (python . t)))
-	
-	(push '("conf-unix" . conf-unix) org-src-lang-modes)))
+  
+  (push '("conf-unix" . conf-unix) org-src-lang-modes)))
 
 ;;(with-eval-after-load 'org
 ;;  ;; This is needed as of Org 9.2

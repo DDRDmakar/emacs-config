@@ -1,5 +1,5 @@
 ;;-------------------------------------
-;; Nikita Makarevich (DDRDmakar) 2021-2023
+;; Nikita Makarevich (DDRDmakar) 2021-2024
 ;; dedrtos@gmail.com
 ;; Distributed under MIT license
 ;;-------------------------------------
@@ -78,6 +78,7 @@
 (when ded/advanced-config
   (use-package rust-mode)
   (use-package kotlin-mode)
+  (use-package scala-mode)
   )
 (when ded/super-advanced-config
   (use-package lsp-mode)
@@ -108,3 +109,6 @@
 
   :config
   (diredp-toggle-find-file-reuse-dir 1))
+
+;;==================================[ A modern list API for Emacs ]====================================
+(use-package dash)

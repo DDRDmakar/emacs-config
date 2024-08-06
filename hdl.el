@@ -1,5 +1,5 @@
 ;;-------------------------------------
-;; Nikita Makarevich (DDRDmakar) 2021-2023
+;; Nikita Makarevich (DDRDmakar) 2021-2024
 ;; dedrtos@gmail.com
 ;; Distributed under MIT license
 ;;-------------------------------------
@@ -29,3 +29,5 @@
     (verilog-highlight-modules           t)
   )
 
+(use-package fpga
+  :if ded/advanced-config) ;; FPGA languages and scripts support
