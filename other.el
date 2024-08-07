@@ -4,6 +4,9 @@
 ;; Distributed under MIT license
 ;;-------------------------------------
 
+;;==================================[ Common Lisp functions support ]====================================
+(eval-when-compile (require 'cl-lib))
+
 ;;==================================[ Very Large Files ]====================================
 (use-package vlf)
 (require 'vlf-setup)

@@ -41,13 +41,13 @@
 ;;==================================[ Theme and ligatures ]====================================
 (use-package material-theme
   :if ded/material-theme
-	:config
-	(load-theme 'material t))
+  :config
+  (load-theme 'material t))
 
 (if ded/fira-code
   (use-package fira-code-mode
     ;;:custom (fira-code-mode-disabled-ligatures '(
-    ;;	"www" "**" "***" "**/" "*>" "*/" "\\\\" "\\\\\\"
+    ;;  "www" "**" "***" "**/" "*>" "*/" "\\\\" "\\\\\\"
     ;;  "{-" "[]" "::" ":::" ":=" "!!" "!=" "!==" "-}"
     ;;  "--" "---" "-->" "->" "->>" "-<" "-<<" "-~"
     ;;  "#{" "#[" "##" "###" "####" "#(" "#?" "#_" "#_("
@@ -79,23 +79,23 @@
 (when ded/doom-theme
   ;; LOOK THEME LIST IN SEPARATE FILE
   (use-package doom-themes
-	:ensure t
-	:config
-	;; Global settings (defaults)
-	(setq doom-themes-enable-bold t    ; if nil, bold is universally disabled
+  :ensure t
+  :config
+  ;; Global settings (defaults)
+  (setq doom-themes-enable-bold t    ; if nil, bold is universally disabled
           doom-themes-enable-italic t) ; if nil, italics is universally disabled
-	(load-theme ded/doom-theme t)
-	
-	;; Enable flashing mode-line on errors
-	(doom-themes-visual-bell-config)
-	;; Enable custom neotree theme (all-the-icons must be installed!)
-	;;(doom-themes-neotree-config)
-	;; or for treemacs users
-	;;(setq doom-themes-treemacs-theme "doom-atom") ; use "doom-colors" for less minimal icon theme
-	;;(doom-themes-treemacs-config)
-	;; Corrects (and improves) org-mode's native fontification.
-	(when ded/super-advanced-config (doom-themes-org-config))
-	))
+  (load-theme ded/doom-theme t)
+  
+  ;; Enable flashing mode-line on errors
+  (doom-themes-visual-bell-config)
+  ;; Enable custom neotree theme (all-the-icons must be installed!)
+  ;;(doom-themes-neotree-config)
+  ;; or for treemacs users
+  ;;(setq doom-themes-treemacs-theme "doom-atom") ; use "doom-colors" for less minimal icon theme
+  ;;(doom-themes-treemacs-config)
+  ;; Corrects (and improves) org-mode's native fontification.
+  (when ded/super-advanced-config (doom-themes-org-config))
+  ))
 
 (use-package doom-modeline
   :if ded/super-advanced-config
@@ -122,9 +122,9 @@
 ;;==================================[ Hilight indentation ]====================================
 (use-package highlight-indent-guides
   :if ded/advanced-config
-	:hook (prog-mode . highlight-indent-guides-mode)
-	:custom
-	(highlight-indent-guides-method 'character))
+  :hook (prog-mode . highlight-indent-guides-mode)
+  :custom
+  (highlight-indent-guides-method 'character))
 
 ;;==================================[ Tree view ]====================================
 (use-package neotree
@@ -162,17 +162,30 @@
   (setq hi-ded/face-names '(
     "red" "orange" "yellow" "green" "sky" "blue" "violet"
     "black" "gray" "white"
-    "cyan" "magenta" "blood" "brown" "olive" "pink"))
+    "cyan" "magenta" "blood" "brown" "olive" "pink"
+    "bisque" "slategray" "satelblue" "royalblue" "steelblue"
+    "aquamarine" "darkgreen" "seagreen" "khaki" "gold" "tan" "coral" "violetred" "purple"))
   (setq hi-ded/color-names '(
     "red" "orange" "yellow" "green" "deep sky blue" "blue" "dark violet"
     "black" "gray" "white"
-    "cyan" "magenta" "dark red" "saddle brown" "olive drab" "hot pink"))
+    "cyan" "magenta" "dark red" "saddle brown" "olive drab" "hot pink"
+    "bisque" "dark slate gray" "light slate blue" "royal blue" "steel blue"
+    "aquamarine" "dark green" "sea green" "khaki" "gold" "tan" "coral" "violet red" "purple"))
   (setq hi-ded/color-is-dark '(
     nil nil nil nil nil t t
     t nil nil
-    nil nil t t t nil))
+    nil nil t t t nil
+    nil t t t t
+    nil t t  nil nil nil nil nil t))
+
+  (cl-assert (= (length hi-ded/face-names) (length hi-ded/color-names) (length hi-ded/color-is-dark))
+             t
+             "Error in hi-lock setup: lists hi-ded/face-names, hi-ded/color-names, hi-ded/color-is-dark are not in equal length: %d %d %d"
+             (length hi-ded/face-names)
+             (length hi-ded/color-names)
+             (length hi-ded/color-is-dark))
   
-  (dotimes (i 16)
+  (dotimes (i (length hi-ded/face-names))
     (let* ((face-symbol-name (concat "ded/" "bg-" (nth i hi-ded/face-names))))
       (eval
         `(defface ,(intern face-symbol-name)
@@ -182,7 +195,7 @@
           "Face for hi-lock mode."))
       (add-to-list 'hi-lock-face-defaults face-symbol-name)))
 
-  (dotimes (i 16)
+  (dotimes (i (length hi-ded/face-names))
     (let* ((face-symbol-name (concat "ded/" "bgul-" (nth i hi-ded/face-names))))
       (eval
         `(defface ,(intern face-symbol-name)
@@ -193,7 +206,7 @@
           "Face for hi-lock mode."))
       (add-to-list 'hi-lock-face-defaults face-symbol-name)))
 
-  (dotimes (i 16)
+  (dotimes (i (length hi-ded/face-names))
     (let* ((face-symbol-name (concat "ded/" "text-" (nth i hi-ded/face-names))))
       (eval
         `(defface ,(intern face-symbol-name)
@@ -202,7 +215,7 @@
           "Face for hi-lock mode."))
       (add-to-list 'hi-lock-face-defaults face-symbol-name)))
 
-  (dotimes (i 16)
+  (dotimes (i (length hi-ded/face-names))
     (let* ((face-symbol-name (concat "ded/" "textul-" (nth i hi-ded/face-names))))
       (eval
         `(defface ,(intern face-symbol-name)
@@ -212,7 +225,7 @@
           "Face for hi-lock mode."))
       (add-to-list 'hi-lock-face-defaults face-symbol-name)))
 
-  (dotimes (i 16)
+  (dotimes (i (length hi-ded/face-names))
     (let* ((face-symbol-name (concat "ded/" "textb-" (nth i hi-ded/face-names))))
       (eval
         `(defface ,(intern face-symbol-name)
