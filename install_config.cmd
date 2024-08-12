@@ -29,7 +29,7 @@ exit $? # Return exit status of previous command
 
 ::=====[ Here is CMD script for Windows ]=====::
 
-set EMACS_CONFIG_DIR="%HOMEPATH%\AppData\Roaming\.emacs.d"
+set EMACS_CONFIG_DIR="C:%HOMEPATH%\AppData\Roaming\.emacs.d"
 echo %EMACS_CONFIG_DIR%
 
 copy lisp "%EMACS_CONFIG_DIR%"

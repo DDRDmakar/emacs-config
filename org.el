@@ -23,7 +23,7 @@
 
   ;; Ensure that anything that should be fixed-pitch in Org files appears that way
   (set-face-attribute 'fixed-pitch nil  :font ded/mono-font)
-  (set-face-attribute 'org-block nil    :foreground nil :inherit 'fixed-pitch)
+  (set-face-attribute 'org-block nil    :foreground 'unspecified :inherit 'fixed-pitch)
   (set-face-attribute 'org-table nil    :inherit 'fixed-pitch)
   (set-face-attribute 'org-formula nil  :inherit 'fixed-pitch)
   (set-face-attribute 'org-code nil     :inherit '(shadow fixed-pitch))
@@ -34,24 +34,7 @@
   (set-face-attribute 'org-checkbox nil  :inherit 'fixed-pitch)
   (set-face-attribute 'line-number nil :inherit 'fixed-pitch)
   (set-face-attribute 'line-number-current-line nil :inherit 'fixed-pitch)
-
-  ;; TODO set up fixed-pitch face for Windows
-  (when ded/windows-env
-    (progn
-      ;; Ensure that anything that should be fixed-pitch in Org files appears that way
-      (set-face-attribute 'fixed-pitch nil :font ded/mono-font)
-      (set-face-attribute 'org-block nil    :foreground nil :inherit 'fixed-pitch)
-      (set-face-attribute 'org-table nil    :inherit 'fixed-pitch)
-      (set-face-attribute 'org-formula nil  :inherit 'fixed-pitch)
-      (set-face-attribute 'org-code nil     :inherit '(shadow fixed-pitch))
-      (set-face-attribute 'org-table nil    :inherit '(shadow fixed-pitch))
-      (set-face-attribute 'org-verbatim nil :inherit '(shadow fixed-pitch))
-      (set-face-attribute 'org-special-keyword nil :inherit '(font-lock-comment-face fixed-pitch))
-      (set-face-attribute 'org-meta-line nil :inherit '(font-lock-comment-face fixed-pitch))
-      (set-face-attribute 'org-checkbox nil  :inherit 'fixed-pitch)
-      (set-face-attribute 'line-number nil :inherit 'fixed-pitch)
-      (set-face-attribute 'line-number-current-line nil :inherit 'fixed-pitch)
-      )))
+  )
 
 (defun ded/org-mode-setup ()
   (org-indent-mode)

@@ -111,9 +111,9 @@
 
 (load-user-file "easykey.el")
 (load-user-file "other.el")
-(load-user-file "org.el")
 (load-user-file "hdl.el")
 (load-user-file "visual.el")
+(load-user-file "org.el")
 (load-user-file "addition.el")
 
 (load-user-file "variables.el") ;; Should be executed after loading all modules
