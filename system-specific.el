@@ -20,7 +20,7 @@
 (setq ded/auto-package-update t)
 (setq ded/open-files-read-only nil) ;; May cause problems!
 (setq ded/windows-env nil)
-
+(setq ded/org-roam-main-path "~/org")
 
 ;;==================================[ Non-customizable stuff ]====================================
 ;; Windows kostyl

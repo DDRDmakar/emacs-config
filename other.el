@@ -115,3 +115,7 @@
 
 ;;==================================[ A modern list API for Emacs ]====================================
 (use-package dash)
+;;==================================[ YAML files highlighting ]====================================
+(use-package yaml-mode)
+;;==================================[ ASCII-DOC (ADOC) files highlighting ]====================================
+(use-package adoc-mode :if ded/advanced-config)

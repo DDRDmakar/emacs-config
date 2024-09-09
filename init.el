@@ -29,14 +29,9 @@
   (unless (file-directory-p dirPath)
     (make-directory dirPath)))
 
-;; Display file name command
-(defun show-file-name ()
-  "Show the full path file name in the minibuffer."
-  (interactive)
-  (message (buffer-file-name)))
-
-(defun int-to-binary-string (x &optional w)
+(defun ded/int-to-binary-string (x &optional w)
   "Convert an integer into it's binary representation in string format"
+  (interactive)
   (let ((a x) (res ""))
     ;; Make number positive if it is negative
     (when (< a 0)
@@ -58,10 +53,21 @@
     ;; Return string representation
     res))
 
-(defun ded/copy-current-path ()
+;; Display file name command
+(defun ded/show-file-name ()
+  "Show the full path file name in the minibuffer."
+  (interactive)
+  (message (buffer-file-name)))
+
+(defun ded/copy-directory-path ()
   "Copy the current directory into the kill ring."
   (interactive)
   (kill-new default-directory))
+
+(defun ded/copy-file-path ()
+  "Copy the current directory into the kill ring."
+  (interactive)
+  (kill-new (buffer-file-name)))
 
 ;;==================================[ Load system-specific config ]====================================
 (load-user-file "system-specific.el")

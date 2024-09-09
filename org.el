@@ -5,10 +5,10 @@
 ;;-------------------------------------
 
 (defun ded/org-font-setup ()
-  ;; Replace list hyphen with triangle
-  (font-lock-add-keywords 'org-mode
-                          '(("^ *\\([-]\\) "
-                             (0 (prog1 () (compose-region (match-beginning 1) (match-end 1) "■"))))))
+  ;; Replace list hyphen with square
+  ;;(font-lock-add-keywords 'org-mode
+  ;;                        '(("^ *\\([-]\\) "
+  ;;                           (0 (prog1 () (compose-region (match-beginning 1) (match-end 1) "■"))))))
 
   ;; Set faces for heading levels
   (dolist (face '((org-level-1 . 1.2)
@@ -216,3 +216,14 @@
 ;;      (org-babel-tangle))))
 ;;
 ;;(add-hook 'org-mode-hook (lambda () (add-hook 'after-save-hook #'ded/org-babel-tangle-config)))
+
+(use-package org-roam-ui
+  :after org-roam
+  :if ded/super-advanced-config
+  :init
+  (create-dir-if-not-exists ded/org-roam-path)
+  (setq org-roam-directory (file-truename ded/org-roam-path))
+  ;;(setq find-file-visit-truename t) ;; The file-truename function is only necessary when you use symbolic links inside org-roam-directory
+  :config
+  (org-roam-db-autosync-mode t)
+  )
