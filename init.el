@@ -29,9 +29,10 @@
   (unless (file-directory-p dirPath)
     (make-directory dirPath)))
 
-(defun ded/int-to-binary-string (x &optional w)
+(defun ded/int-to-binary-string (x &optional w print-message)
   "Convert an integer into it's binary representation in string format"
-  (interactive)
+  (interactive "nInteger: \nnWidth: \np")
+  ;; 3-rd argument is needed to distinguish when function is called interactively
   (let ((a x) (res ""))
     ;; Make number positive if it is negative
     (when (< a 0)
@@ -51,6 +52,7 @@
           (make-string (- w (length res)) ?0)
           res)))
     ;; Return string representation
+    (when print-message (message res))
     res))
 
 ;; Display file name command
