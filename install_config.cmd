@@ -4,6 +4,8 @@ GOTO :CMDSCRIPT
 ::CMDLITERAL
 
 ##=====[ Here is Bash script for Linux ]=====##
+set -o xtrace
+
 EMACS_CONFIG_DIR="$HOME/.emacs.d"
 
 cp -r ./lisp "$EMACS_CONFIG_DIR"

@@ -120,11 +120,11 @@
   :if (and ded/super-advanced-config ded/enable-icons))
 
 ;;==================================[ Hilight indentation ]====================================
-(use-package highlight-indent-guides
-  :if ded/advanced-config
-  :hook (prog-mode . highlight-indent-guides-mode)
-  :custom
-  (highlight-indent-guides-method 'character))
+;;(use-package highlight-indent-guides
+;;  :if ded/advanced-config
+;;  :hook (prog-mode . highlight-indent-guides-mode)
+;;  :custom
+;;  (highlight-indent-guides-method 'character))
 
 ;;==================================[ Tree view ]====================================
 (use-package neotree
@@ -258,8 +258,8 @@
   (whitespace-line-column 250)
 
   :config
-  (add-hook 'whitespace-mode-hook
-    (lambda () (highlight-indent-guides-mode 0)))
+  ;;(add-hook 'whitespace-mode-hook
+  ;;  (lambda () (highlight-indent-guides-mode 0)))
   (setq dashboard-items '((recents  . 10)
                         (bookmarks . 5)
                         (projects . 5)

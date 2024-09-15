@@ -44,6 +44,17 @@
     (lambda () (tab-line-mode t)))
   (add-hook 'magit-log-mode-hook
     (lambda () (tab-line-mode t)))
+  
+  (transient-define-suffix magit-submodule-update-all(args)
+    "Update all submodules"
+    :class 'magit--git-submodule-suffix
+    :description "Update all modules    git submodule update --init [--recursive]"
+    (interactive 
+      (list (magit-submodule-arguments "--recursive")))
+    (magit-with-toplevel
+      (magit-run-git-async "submodule" "update" "--init" args)))
+  (transient-append-suffix 'magit-submodule '(2 -1)  '("U" magit-submodule-update-all))
+
   :custom
   (magit-display-buffer-function #'magit-display-buffer-same-window-except-diff-v1)
   (ediff-split-window-function #'split-window-vertically)
@@ -89,10 +100,20 @@
 
 ;;==================================[ Tramp ]====================================
 (use-package counsel-tramp
+  :requires tramp
   :config
   (setq tramp-default-method "ssh")
   (define-key global-map (kbd "C-c t") 'counsel-tramp)
   )
+(setq remote-file-name-inhibit-cache nil)
+;; Disable version control to avoid delays:
+;;(setq vc-ignore-dir-regexp
+;;      (format "\\(%s\\)\\|\\(%s\\)"
+;;              vc-ignore-dir-regexp
+;;              tramp-file-name-regexp))
+;; If this is too radical, because you want to use version control remotely, trim vc-handled-backends to just those you care about, for example:
+(setq vc-handled-backends '(SVN Git))
+(setq remote-file-name-inhibit-locks t)
 
 ;;==================================[ Markdown ]====================================
 (use-package markdown-mode

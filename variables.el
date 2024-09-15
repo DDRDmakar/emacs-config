@@ -43,7 +43,7 @@
 
 ;;==================================[ TABs ]====================================
 ;; C-like languages
-(setq-default indent-tabs-mode t)
+(setq-default indent-tabs-mode ded/default-indent-tabs-mode)
 (setq-default tab-width 4) ;; Assuming you want your tabs to be four spaces wide
 (setq-default c-basic-offset tab-width)
 ;;;; Ruby-like languages
@@ -80,8 +80,8 @@
 
 ;;==================================[ Recent files ]====================================
 (recentf-mode 1)
-(setq recentf-max-menu-items 50)
-(setq recentf-max-saved-items 50)
+(setq recentf-max-menu-items 200)
+(setq recentf-max-saved-items 200)
 (global-set-key "\C-x\ \C-r" 'recentf-open-files)
 
 ;;==================================[ Duplicate lines ]====================================

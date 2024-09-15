@@ -21,6 +21,7 @@
 (setq ded/open-files-read-only nil) ;; May cause problems!
 (setq ded/windows-env nil)
 (setq ded/org-roam-main-path "~/org")
+(setq ded/default-indent-tabs-mode t)
 
 ;;==================================[ Non-customizable stuff ]====================================
 ;; Windows kostyl
