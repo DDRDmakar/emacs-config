@@ -35,11 +35,12 @@
   ;; 3-rd argument is needed to distinguish when function is called interactively
   (let ((a x) (res ""))
     ;; Make number positive if it is negative
+    (when (and (< a 0) (not w)) (error "You need to specify width for negative numbers"))
     (when (< a 0)
       (setq a (if w
         (+ a (expt 2 w))
         (* a -1))))
-    (when (< a 0) ())
+    (when (< a 0) (error "Number does not fit into this width"))
     ;; Write bits into string
     (setq res
       (concat (mapcar
