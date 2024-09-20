@@ -252,3 +252,7 @@
 (use-package dtrt-indent
   :if ded/advanced-config
   :config (dtrt-indent-mode t))
+
+;;==================================[ Scrolling with keyboard ]====================================
+(global-set-key (kbd "C-n") 'scroll-up-line)
+(global-set-key (kbd "C-p") 'scroll-down-line)

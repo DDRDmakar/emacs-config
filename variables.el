@@ -135,7 +135,8 @@
     ;; File name ends in ‘.C’.
     ;;("\\.C\\'" . c++-mode))
     '(
-      ("/[Kk]build\\'" . makefile-gmake-mode))
+      ("/[Kk]build\\'" . makefile-mode)
+      ("\\.mak\\'" . makefile-mode))
     auto-mode-alist))
 
 ;;==================================[ Open files read-only ]====================================
