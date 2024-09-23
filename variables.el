@@ -67,7 +67,8 @@
 (setq-default electric-indent-inhibit t)
 
 ;;==================================[ Line numbers ]====================================
-(column-number-mode) ; Display column numbers in mode line
+(line-number-mode) ;; Display line numbers in mode line
+(column-number-mode) ;; Display column numbers in mode line
 ;;(global-linum-mode t)
 ;; Disable line numbers for some modes
 ;;(dolist (mode '(org-mode-hook
