@@ -129,7 +129,18 @@
     "<down>"  'windmove-down  
     "<left>"  'windmove-left  
     "<right>" 'windmove-right
-	))
+	)
+
+  ;; Define window switching key sequences starting with C-b to copy tmux behavior
+  (global-unset-key (kbd "C-b"))
+  (general-create-definer ded/b-keys :prefix "C-b")
+  (ded/b-keys
+    "<up>"    'windmove-up    
+    "<down>"  'windmove-down  
+    "<left>"  'windmove-left  
+    "<right>" 'windmove-right
+	)
+  )
 
 ;;==================================[ Hydra ]====================================
 (use-package hydra

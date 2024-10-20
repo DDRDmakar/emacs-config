@@ -12,3 +12,8 @@
 
 ;; Treat _ as part of the word for left-word and right-word functions
 (modify-syntax-entry ?_ "w")
+
+;; Enable disabled commands
+(put 'scroll-left 'disabled nil)
+(put 'upcase-region 'disabled nil)
+
