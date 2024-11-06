@@ -70,7 +70,13 @@
 (defun ded/copy-file-path ()
   "Copy the current directory into the kill ring."
   (interactive)
-  (kill-new (buffer-file-name)))
+  (kill-new buffer-file-name))
+
+;; Display file name command
+(defun ded/copy-file-name ()
+  "Copy file name into the kill ring."
+  (interactive)
+  (kill-new (file-name-nondirectory buffer-file-name)))
 
 ;;==================================[ Load system-specific config ]====================================
 (load-user-file "system-specific.el")

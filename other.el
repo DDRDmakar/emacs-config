@@ -101,8 +101,10 @@
 ;;==================================[ Tramp ]====================================
 (use-package counsel-tramp
   :requires tramp
+  :custom
+  (tramp-default-method "ssh")
+  (tramp-terminal-type "xterm")
   :config
-  (setq tramp-default-method "ssh")
   (define-key global-map (kbd "C-c t") 'counsel-tramp)
   )
 (setq remote-file-name-inhibit-cache nil)
