@@ -57,9 +57,10 @@
   (setq org-hide-emphasis-markers t)
   (setq org-image-actual-width nil)
   (setq org-support-shift-select t) ;; Select with shift key in org mode
+  (setq org-src-preserve-indentation t) ;; Suppress auto indentation inside code blocks
   ;; Add more states for TODO items
   (setq org-todo-keywords
-        '((sequence "TODO(t)" "DOING(c)" "REVIEW(r)" "PARTICIPATE(p)" "BLOCKED(b)" "|" "DONE(d)" "HOLD(h)" "FAIL(f)" "ABORT(a)" "DELEGATED(o)")
+        '((sequence "TODO(t)" "DOING(c)" "REVIEW(r)" "PARTICIPATE(p)" "HOLD(h)" "BLOCKED(b)" "|" "DONE(d)" "FAIL(f)" "ABORT(a)" "DELEGATED(o)" "BACKLOG(l)")
           ;;(sequence "REPORT(r)" "BUG(b)" "KNOWNCAUSE(k)" "|" "FIXED(f)")
           ))
   (ded/org-font-setup))
@@ -227,3 +228,5 @@
   :config
   (org-roam-db-autosync-mode t)
   )
+
+(use-package ox-jira)

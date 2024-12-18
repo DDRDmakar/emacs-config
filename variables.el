@@ -59,7 +59,7 @@
 
 (add-hook 'python-mode-hook
   (lambda ()
-    (setq indent-tabs-mode t)
+    (setq indent-tabs-mode ded/default-indent-tabs-mode)
     (setq tab-width 4)
     (setq python-indent-offset 4)))
 
@@ -83,6 +83,7 @@
 (recentf-mode 1)
 (setq recentf-max-menu-items 200)
 (setq recentf-max-saved-items 200)
+;;(setq recentf-auto-cleanup 'never)
 (global-set-key "\C-x\ \C-r" 'recentf-open-files)
 
 ;;==================================[ Duplicate lines ]====================================
